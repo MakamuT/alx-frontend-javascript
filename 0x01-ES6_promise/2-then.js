@@ -9,12 +9,8 @@ function getResponseFromAPI(success = true) {
       reject(new Error());
     }
   })
-    .then(() => {
-      return { status: 200, body: 'success' };
-    })
-    .catch(() => {
-      return new Error('');
-    })
+    .then(() => ({ status: 200, body: 'success' }))
+    .catch(() => (('')))
     .finally(() => {
       console.log('Got a response from the API');
     });
